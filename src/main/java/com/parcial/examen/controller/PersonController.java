@@ -21,7 +21,7 @@ public class PersonController {
         person.setDni(dni);
         person.setMobile(mobile);
         person.setMobile(a);
-        
+
         listPerson.add(person);
         return "saved successfully";
     }
