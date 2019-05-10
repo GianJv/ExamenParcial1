@@ -13,14 +13,15 @@ public class PersonController {
     private final List<Person> listPerson;
     @PostMapping("/save")
     public String postSavePerson(@RequestBody Integer id, @RequestBody String name, @RequestBody String last_name,
-                                 @RequestBody String dni, @RequestBody String mobile){
+                                 @RequestBody String dni, @RequestBody String mobile, @RequestBody String a){
         Person person = new Person();
         person.setId(id);
         person.setName(name);
         person.setLast_name(last_name);
         person.setDni(dni);
         person.setMobile(mobile);
-
+        person.setMobile(a);
+        
         listPerson.add(person);
         return "saved successfully";
     }
