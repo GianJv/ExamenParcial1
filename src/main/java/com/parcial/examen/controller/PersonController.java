@@ -11,7 +11,11 @@ import java.util.List;
 @RequiredArgsConstructor
 public class PersonController {
     private final List<Person> listPerson;
+<<<<<<< HEAD
+    @PostMapping("/agregar")
+=======
     @PostMapping("/save")
+>>>>>>> origin/master
     public String postSavePerson(@RequestBody Integer id, @RequestBody String name, @RequestBody String last_name,
                                  @RequestBody String dni, @RequestBody String mobile){
         Person person = new Person();
@@ -20,14 +24,24 @@ public class PersonController {
         person.setLast_name(last_name);
         person.setDni(dni);
         person.setMobile(mobile);
+<<<<<<< HEAD
+        return "saved successfully";
 
         listPerson.add(person);
         return "saved successfully";
+
     }
     @GetMapping("/view")
     public List<Person> getViewPerson(){
 
         return listPerson;
+    }
+}
+
+=======
+
+        listPerson.add(person);
+        return "saved successfully";
     }
     public String postUpdatePerson(@RequestBody Integer id, @RequestBody String name, @RequestBody String last_name,
                                    @RequestBody String dni, @RequestBody String mobile) {
@@ -44,17 +58,5 @@ public class PersonController {
         }
         return "saved successfully";
     }
-
-    @PostMapping("/delete")
-    public String postDeletePerson(@RequestBody String dni) {
-
-        for (Person person1 :
-                listPerson) {
-            if (person1.getDni().equals(dni)) {
-                listPerson.remove(person1);
-            }
-
-        }
-        return "delete successfully";
-    }
 }
+>>>>>>> origin/master
