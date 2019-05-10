@@ -29,7 +29,6 @@ public class PersonController {
 
         return listPerson;
     }
-    @PostMapping("/modify")
     public String postUpdatePerson(@RequestBody Integer id, @RequestBody String name, @RequestBody String last_name,
                                    @RequestBody String dni, @RequestBody String mobile) {
 
@@ -44,17 +43,5 @@ public class PersonController {
 
         }
         return "saved successfully";
-    }
-    @PostMapping("/delete")
-    public String postDeletePerson(@RequestBody String dni) {
-
-        for (Person person1 :
-                listPerson) {
-            if (person1.getDni().equals(dni)) {
-                listPerson.remove(person1);
-            }
-
-        }
-        return "delete successfully";
     }
 }
