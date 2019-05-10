@@ -57,4 +57,8 @@ public class PersonController {
         }
         return "delete successfully";
     }
+    @GetMapping("/aqui")
+    public String getAqui(){
+        return "hello world";
+    }
 }
